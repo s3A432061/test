@@ -25,4 +25,4 @@ Route::get(['prefix'=>'student'],function(){
         'users'=>'StudentController@getStudentScore'
     ])->where(['subject'=>'(chinese | english | math)']);
 
-})
+});
