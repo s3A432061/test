@@ -33,4 +33,7 @@ Route::group(['prefix'=>'student'],function(){
 
 });
 
+Route::group(['namespace'=>'Cool'],function(){
+
 Route::get('cool','Cool\TestController@index');
+});
