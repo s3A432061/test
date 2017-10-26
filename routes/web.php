@@ -11,4 +11,24 @@
 |
 */
 
-Route::controller('board','BoardController');
+
+Route::get('/',function(){
+    return view('welcome');
+});
+
+Route::get('/','HomeController@index');
+
+
+Route::group(['prefix'=>'student'],function(){
+
+    Route::get('{student_no}',[
+        'as'=>'student',
+        'users'=>'StudentController@getStudentData'
+    ]);
+
+    Route::get('{student_no}/score/{subject?}',[
+        'as'=>'student.score',
+        'users'=>'StudentController@getStudentScore'
+    ])->where(['subject'=>'(chinese | english | math)']);
+
+});
