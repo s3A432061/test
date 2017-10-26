@@ -12,11 +12,10 @@
 */
 
 
-Route::get('/',function(){
-    return view('welcome');
-});
+/*
 
 Route::get('/','HomeController@index');
+
 
 
 Route::group(['prefix'=>'student'],function(){
@@ -37,3 +36,10 @@ Route::group(['namespace'=>'Cool'],function(){
 
 Route::get('cool','Cool\TestController@index');
 });
+*/
+
+Route::get('/',function(){
+    return view('welcome');
+});
+
+Route::get('/board','BoardController@getIndex');
